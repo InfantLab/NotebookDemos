@@ -4,14 +4,14 @@ This repository contains a Jupyter (RKernel) notebook file which walks you throu
 
 It is designed to launch from Binder too. 
 
-Jupyter+R: [![Binder](http://mybinder.org/badge.svg)](http://beta.mybinder.org/v2/gh/yourbrain/notebookdemos/master?filepath=index.ipynb)
+Jupyter+R: [![Binder](http://mybinder.org/badge.svg)](http://beta.mybinder.org/v2/gh/yourbrain/notebookdemos/master)
 
 RStudio: [![Binder](http://mybinder.org/badge.svg)](http://beta.mybinder.org/v2/gh/yourbrain/notebookdemos/master?urlpath=rstudio)
 
 One nice thing about MyBinder is that it supports using R + RStudio, with libraries pinned to a specific
 snapshot on [MRAN](https://mran.microsoft.com/documents/rro/reproducibility).
 
-You need to have a `runtime.txt` file that is formatted like:
+You need to have a `runtime.txt` file in this folder formatted like:
 
 ```
 r-<YYYY>-<MM>-<DD>
