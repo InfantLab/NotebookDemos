@@ -2,11 +2,15 @@
 
 This repository contains a Jupyter (RKernel) notebook file which walks you through some of the basic ways to use notebooks for reproducible data analysis. 
 
-It is designed to launch from Binder too. 
+It is designed to launch from Binder too. Click the button then launch `index.ipynb`
 
 Jupyter+R: [![Binder](http://mybinder.org/badge.svg)](http://beta.mybinder.org/v2/gh/yourbrain/notebookdemos/master)
 
 RStudio: [![Binder](http://mybinder.org/badge.svg)](http://beta.mybinder.org/v2/gh/yourbrain/notebookdemos/master?urlpath=rstudio)
+
+Also included is a example of using R's intereactive plotting system Shiny using the famous Gapminder data (originally from [cameres](https://github.com/cameres/gapminder-shiny) )
+
+RShiny: [![Binder](http://mybinder.org/badge.svg)](http://beta.mybinder.org/v2/gh/yourbrain/notebookdemos/master?urlpath=shiny/gapminder-shiny/)
 
 One nice thing about MyBinder is that it supports using R + RStudio, with libraries pinned to a specific
 snapshot on [MRAN](https://mran.microsoft.com/documents/rro/reproducibility).
