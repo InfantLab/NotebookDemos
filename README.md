@@ -8,7 +8,7 @@ Jupyter+R: [![Binder](http://mybinder.org/badge.svg)](http://beta.mybinder.org/v
 
 RStudio: [![Binder](http://mybinder.org/badge.svg)](http://beta.mybinder.org/v2/gh/yourbrain/notebookdemos/master?urlpath=rstudio)
 
-Also included is a example of using R's intereactive plotting system Shiny using the famous Gapminder data (originally from [cameres](https://github.com/cameres/gapminder-shiny) )
+Also included is a example of using R's intereactive plotting system Shiny using the famous Gapminder data (originally from [cameres](https://github.com/cameres/gapminder-shiny) ). See if you can spot (and fix) the deliberate mistake.
 
 RShiny: [![Binder](http://mybinder.org/badge.svg)](http://beta.mybinder.org/v2/gh/yourbrain/notebookdemos/master?urlpath=shiny/gapminder-shiny/)
 
