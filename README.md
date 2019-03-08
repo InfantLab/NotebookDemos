@@ -6,15 +6,14 @@ This repository contains a Jupyter notebook file which walks you through the bas
 ### Binder example
 [MyBinder.org](http://mybinder.org) provides a way of sharing fully functionally interactive notebooks over the internet. It works by compiling and hosting a Docker instance with a fixed set of all the necessary software to run the notebook.
 
-This example can to launched and run from Binder. Click the button then launch `index.ipynb`
+This example can to launched and run from Binder. Click one of these black and red buttons. Both [RStudio](https://www.rstudio.com/) and [IRKernel](https://irkernel.github.io/) are installed by default, so you can use either the Jupyter notebook interface or
+the RStudio interface.
 
 Jupyter+R: [![Binder](http://mybinder.org/badge.svg)](http://beta.mybinder.org/v2/gh/yourbrain/notebookdemos/master)
 
 RStudio: [![Binder](http://mybinder.org/badge.svg)](http://beta.mybinder.org/v2/gh/yourbrain/notebookdemos/master?urlpath=rstudio)
 
-Both [RStudio](https://www.rstudio.com/) and [IRKernel](https://irkernel.github.io/)
-are installed by default, so you can use either the Jupyter notebook interface or
-the RStudio interface.
+Once it has started itself up, launch the tutorial by clicking `index.ipynb`
 
 ### Shiny example
 Also included is a example of using R's intereactive plotting system Shiny using the famous Gapminder data (originally from [cameres](https://github.com/cameres/gapminder-shiny) ). See if you can spot (and fix) the deliberate mistake.
