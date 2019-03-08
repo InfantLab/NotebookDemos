@@ -1,10 +1,10 @@
 # A Jupyter + R ( + mybinder.org) tutorial for social scientists
 
-This repository contains a Jupyter notebook file which walks you through the basics of using notebooks and RStats for reproducible data analysis. It starts with a general guide to the notebook format and how to install the necessary software. Then it gives example using R to load data, filter missing values, create graphs and run statistical tests. 
+This repository contains a Jupyter notebook file which walks you through the basics of using notebooks and RStats for reproducible data analysis. It starts with a general guide to the notebook format and how to install the necessary software. Then it goes through an example using R to load data, filter missing values, create graphs and run statistical tests. 
 
 
 ### Binder example
-[MyBinder.org](http://mybinder.org) provides a way of sharing fully functionally interactive notebooks over the internet. It works by compiling abnd hosting a Docker instance with a fixed set of all the necessary software to run the notebook.
+[MyBinder.org](http://mybinder.org) provides a way of sharing fully functionally interactive notebooks over the internet. It works by compiling and hosting a Docker instance with a fixed set of all the necessary software to run the notebook.
 
 This example can to launched and run from Binder. Click the button then launch `index.ipynb`
 
