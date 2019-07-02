@@ -13,6 +13,8 @@ Jupyter+R: [![Binder](http://mybinder.org/badge.svg)](http://beta.mybinder.org/v
 
 RStudio: [![Binder](http://mybinder.org/badge.svg)](http://beta.mybinder.org/v2/gh/yourbrain/notebookdemos/master?urlpath=rstudio)
 
+*Beware, that if it hasn't been used recently, it can take a very long time to recreate the virtual machine.*
+
 Once it has started itself up, launch the tutorial by clicking `index.ipynb`
 
 ### Shiny example
