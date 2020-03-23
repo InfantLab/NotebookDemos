@@ -7,11 +7,10 @@ This repository contains a Jupyter notebook file which walks you through the bas
 [MyBinder.org](http://mybinder.org) provides a way of sharing fully functionally interactive notebooks over the internet. It works by compiling and hosting a Docker instance with a fixed set of all the necessary software to run the notebook.
 
 This example can to launched and run from Binder. Click one of these black and red buttons. Both [RStudio](https://www.rstudio.com/) and [IRKernel](https://irkernel.github.io/) are installed by default, so you can use either the Jupyter notebook interface or
-the RStudio interface.
+the RStudio interface for R projects.
 
 Jupyter+R: [![Binder](http://mybinder.org/badge.svg)](http://beta.mybinder.org/v2/gh/yourbrain/notebookdemos/master)
 
-RStudio: [![Binder](http://mybinder.org/badge.svg)](http://beta.mybinder.org/v2/gh/yourbrain/notebookdemos/master?urlpath=rstudio)
 
 *Beware, that if it hasn't been used recently, it can take a very long time to recreate the virtual machine.*
 
