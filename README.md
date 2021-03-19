@@ -2,8 +2,16 @@
 
 This repository contains a Jupyter notebook file which walks you through the basics of using notebooks and RStats for reproducible data analysis. It starts with a general guide to the notebook format and how to install the necessary software. Then it goes through an example using R to load data, filter missing values, create graphs and run statistical tests. 
 
+## To run locally
 
-## Binder example
+Download this folder of code to your local machine amd then either 
+ 
+ 1. **In RStudio** - navigate to the downloaded folder, open `install.R` and run the code to install the necessary packages. Then open `index.Rmd`.
+ 2. **In Jupyter** - install and launch Jupyter via [Anaconda Navigator](https://www.anaconda.com/products/individual) or similar. Then, in Jupyter, navigate to the downloaded folder and open `index.ipynb`.
+
+
+
+## To run remotely using Binder
 [MyBinder.org](http://mybinder.org) provides a way of sharing fully functionally interactive notebooks over the internet. It works by compiling and hosting a Docker instance with a fixed set of all the necessary software to run the notebook.
 
 This example can to launched and run from Binder. Click one of these black and red buttons. Both [RStudio](https://www.rstudio.com/) and [IRKernel](https://irkernel.github.io/) are installed by default, so you can use either the Jupyter notebook interface or
@@ -11,10 +19,12 @@ the RStudio interface for R projects.
 
 This tutorial is about Jupyter in combination with R. To launch it press this button >>  [![Binder](http://mybinder.org/badge.svg)](http://beta.mybinder.org/v2/gh/yourbrain/notebookdemos/master)
 
+Once it has started itself up, launch the tutorial by clicking `index.ipynb`
+
 
 *Beware, that if it hasn't been used recently, it can take a very long time to recreate the virtual machine.*
+*Beware, all changes will be lost when you close the binder session.*
 
-Once it has started itself up, launch the tutorial by clicking `index.ipynb`
 
 ## Shiny example
 Also included is a example of using R's intereactive plotting system Shiny using the famous Gapminder data (originally from [cameres](https://github.com/cameres/gapminder-shiny) ). See if you can spot (and fix) the deliberate mistake.
