@@ -1,0 +1,453 @@
+---
+title: "index.Rmd"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# A quick Computational Notebook tutorial for social scientists
+
+## Using R-stats in RMarkdown or Jupyter notebook
+
+## Caspar Addyman, March 2021
+
+Version 0.5, 16 March 2021
+
+### Abstract
+
+> This notebook contains simple explanations and examples of how you might create a Jupyter notebook to make your data analysis transparent and reproducible. This is an early version so it's not great yet!
+
+It's available here: <https://github.com/YourBrain/NotebookDemos>
+
+### Table of Contents
+
+[File types](#types)\
+[Installation](#install)\
+[Getting started](#starting)\
+[Editing Markdown](#markdown)\
+[Running Code](#runcode)\
+[Loading Data](#loaddata)\
+Data filtering - *TO DO*\
+[Basic Graphs](#graphs)\
+[Basic Stats](#stats)\
+Fancy Graphs - *TO DO*\
+Fancy Stats - *TO DO*
+
+## File types - index.Rmd vs index.ipynb?
+
+There are two versions of this notebook file `index.Rmd` and `index.ipynb`. They both contain the same information and code. The Rmd file is an R Markdown document that can be run and interpreted by in the RStudio application. The ipynb file is a jupyter document that can be run in the Jupyter notebook environment.
+
+### Introduction
+
+Notebooks are a flexible means of creating and displaying nicely formatted web documents that combine text, equations, runnable computer code and the outputs of that code, including rich and interactive visualisations. Jupyter is standard type of notebook that is being very widely adopted across industry and the sciences.
+
+The Jupyter system consists of a webserver that sends the Jupyter notebooks to web-browser and set of different interactive kernels (ikernels) that handle running code in different computer languages. The system was original developed to use Python. But it now supports R, JavaScript, Julia and many more. A newer version called JupterLab is very similar but tries to recreate the multi-window layout familiar to users of RStudio or Matlab.
+
+In the basic case everything runs on your local computer. But because Jupyter notebooks run on web protocols it is possible for the server, the browser and the kernel to all be on different machines. One interesting example of this is [MyBinder.org](mybinder.org) which takes files from [GitHub](https://github.com/) and creates an environment that lets them be run by anyone, anywhere.
+
+For example, the current notebook can be found [here](https://github.com/YourBrain/NotebookDemos) and can be run by following this [link](http://beta.mybinder.org/v2/gh/yourbrain/notebookdemos/master?filepath=index.ipynb) or pressing this button: [![Binder](http://mybinder.org/badge.svg)](http://beta.mybinder.org/v2/gh/yourbrain/notebookdemos/master?filepath=index.ipynb)
+
+#### Jupyter Installation
+
+The best way to install Jupyter and R is using Anaconda. 1. Download [Anaconda Navigator](https://www.anaconda.com/download/). 2. Launch Anaconda Navigator and within the navigator window click buttonginstall RStudio. 3. Launch RStudio and then run the following commands to make the interactive R kernel (IRkernel) available on your system.
+
+    install.packages('devtools')
+    devtools::install_github('IRkernel/IRkernel')
+    IRkernel::installspec()
+
+4.  Launch either jupyterlab or jupyter notebook.
+5.  Create a new notebook file (.ipynb) or navigate to an existing one. If you are using R then you will want change the active kernel in the Kernel menu.
+
+#### RStudio Installation
+
+Install the latest version of R from <https://cran.r-project.org/> Install the latest version of RStudio from <https://rstudio.com/products/rstudio/>
+
+#### Getting started
+
+We won't spend too much time on using R or how the Jupyter environment works. There are lots of resources out there already.
+
+##### Useful References
+
+-   Jupyter site - <https://jupyter.org/>
+-   Jupyter Help - See the help menu
+-   Markdown Help - See the help menu
+
+#### Tutorials and examples
+
+-   A guide to R for psychologists - <http://personality-project.org/r/r.guide.html>
+-   Maths in markdown <http://www.statpower.net/Content/310/R%20Stuff/SampleMarkdown.html>
+-   Python crashcourse - <http://ehmatthes.github.io/pcc/cheatsheets/README.html>
+-   A detailed R tutorial from the Software Carpentry team <https://swcarpentry.github.io/r-novice-gapminder/>
+-   A psychologist's Guide to R - <https://github.com/seanchrismurphy/A-Psychologists-Guide-to-R/>
+-   An open science tutorial from Michael C. Frank <https://github.com/mcfrank/openscience_tutorial>
+-   Simple GGPlot examples <https://www.statmethods.net/advgraphs/ggplot2.html>
+
+#### Cheatsheets are your friend
+
+No one can remember all the syntax of all the computer languages they are likely to use, especially as a beginner. So printable cheatsheets that include lots of useful info are a great help.
+
+R \* R Syntax cheatsheet <https://cran.r-project.org/doc/contrib/Short-refcard.pdf> \* TidyData cheatsheet - <https://github.com/rstudio/cheatsheets/raw/master/data-transformation.pdf> \* GGPlot cheatsheet - <https://github.com/rstudio/cheatsheets/raw/master/data-visualization-2.1.pdf> \* Lots of cheatsheats - <https://www.rstudio.com/resources/cheatsheets/>
+
+Python \* Python language reference - <http://overapi.com/python> \* Python3 cheatsheet - <https://perso.limsi.fr/pointal/python:memento>
+
+## THE TUTORIAL STARTS HERE
+
+### Editing Markdown cells
+
+There are two types of editable cells in Jupyter. Markdown and Code. This is a markdown cell. Double click on it and you will see what it markdown format text looks like.
+
+It lets you create text with some simple formatting marks to indicate things like *italics* or **bold text** or [hyperlinks](https://google.com). You can display (non executable) `computer code` in the text or as a stand alone block:
+
+    qplot(hp, mpg, data=mtcars, shape=am, color=am, 
+       facets=gear~cyl, size=I(3),
+       xlab="Horsepower", ylab="Miles per Gallon") 
+
+Markdown has very powerful equation formatting tools based on LaTeX which let add formulas into your text $\sum_{i=1}^n x_{i}^2$ or on a separate line when things get complicated, like our old friend the Gaussian distribution
+
+$$
+f(x;\mu,\sigma^2) = \frac{1}{\sigma\sqrt{2\pi}} 
+e^{ -\frac{1}{2}\left(\frac{x-\mu}{\sigma}\right)^2 }
+$$
+
+#### Try it for yourself
+
+This is also a markdown cell. Go ahead and change some this text.
+
+Why not add a hyperlink with the [name of your website](http://google.com)
+
+OR put it a bit of code. The single backtick format is good for showing the names of things `myfunction`. The three quotes blocks of code let you show how someone might use your function.
+
+    total = 0
+    for (i in range(10)):
+        total += myfunction(i)
+    print(total)
+
+### Running code in notebooks
+
+```{r}
+# This is a code cell. 
+# In R comment lines starting with '#' are ignored
+#
+# To run/execute this code, click on the cell and press ctrl-enter
+print("Hello world")
+```
+
+```{r}
+# In Jupyter you can tell it's a code cell from the label on the left outside the cell
+# In [xx]:
+#
+# This can have three formats
+# In [ ]:    - brackets empty, cell hasn't yet been run on this occasion
+# In [*]:    - cell currently running
+# In [12]:   - this was the 12th cell to run/execute
+#
+# Because we are using the R kernel (aka IRkernel) cells is treated as R code.
+# if the kernel was changed to Python, etc. this cell would give lots of errors.
+# A kernel is the engine that runs the code. 
+#
+# In RStudio, runnable code cells have a three icons in top right corner 
+# (a cog, a down arrow and a play button)
+
+
+# Let's create some variables and give them values
+NX<-500    
+mu<-10
+sigma<-5
+
+#now generate NX random samples from Normal Distribution N(mu, sigma)
+samples<-rnorm(NX,mu,sigma) 
+
+print(samples[1:5])  #print first 5 values
+print(mean(samples)) #calculate the mean
+print(sd(samples))   #calculate the std
+
+#to run the code, click on the cell and press Ctrl-Enter
+
+#do it again and you should see the values change
+```
+
+```{r}
+#usually we don't want to recalculate everything at every step. 
+#Dividing code into cells provides a way to control code execution
+#click in this cell and press control enter a few times
+print(samples[1:5])  #print first 5 values
+print(mean(samples)) #calculate the mean
+```
+
+```{r}
+print(sd(samples))   #calculate the std
+```
+
+```{r}
+# output from cells can include figures
+#
+library(ggplot2)
+qplot(samples)
+```
+
+```{r}
+# if you are not familiar with R, now would be a good time to play around
+
+
+
+
+```
+
+### Loading data
+
+The first thing we usually want to do is load our data. Data can come from a local file or a URL.
+
+Unlike SPSS and more like spreadsheets, R lets you sort, transform, combine and filter data very easily. Unlike spreadsheets you can do this without worrying about altering your original data. The data is loaded into memory and the orignal file is untouched.
+
+#### Tidy Data
+
+One key concept for data files in R (and data science) is that of '[tidy data](https://cran.r-project.org/web/packages/tidyr/vignettes/tidy-data.html)'. This is a concept championed by Hadley Wickham. He says that:
+
+> In tidy data: 1. Each variable forms a column. 2. Each observation forms a row. 3. Each type of observational unit forms a table.
+
+If your data is in this format then everything else becomes a lot easier. In fact there is a whole [TidyVerse](https://www.tidyverse.org/) of tools that build from this assumption.
+
+*The main take home message from this you should keep your raw data in simple flat spreadsheets and let code do all the sorting and organising.*
+
+```{r}
+#to use tools like those in TidyVerse, we need to install and load them
+install.packages("tidyverse")
+
+library(readr)  #for loading data
+library(haven)  #for reading SPSS data
+library(dplyr)  #base functions for working with tidy data
+library(tidyr)  #tools for rearranging data
+library(ggplot2)#plotting graphs
+
+```
+
+### Local data
+
+Data can be loaded from folders on the local machine.
+
+We have local files called `diet.csv` and `diet.sav`.
+
+These are identical data in csv and SPSS formats.
+
+```{r}
+#useful first step is to find out which directory the notebook is working from
+getwd()
+dietdata<-read_csv('diet.csv')
+head(dietdata)
+```
+
+```{r}
+dietspss<-read_sav('diet.sav')
+head(dietspss)
+```
+
+```{r}
+#hmm it looks like the csv file didn't include a weightLOST column
+#lets calculate and add that to our local version
+
+dietdata$weightLOST<-dietdata$pre.weight-dietdata$weight6weeks
+head(dietdata)
+```
+
+```{r}
+#are they identical?
+sum(dietdata$weightLOST - dietspss$weightLOST)
+```
+
+### Remote data
+
+The diet datafile comes from a nice collection created by the University of Sheffield. <https://www.sheffield.ac.uk/mash/data>
+
+Not only do they have data you can play around with. They also have worked examples of how you might run various analyses with thse data <https://www.sheffield.ac.uk/mash/statistics2/anova>
+
+The original URL for the `diet.csv` file is \> <https://www.sheffield.ac.uk/polopoly_fs/1.570199!/file/stcp-Rdataset-Diet.csv>
+
+Let's load that one.
+
+```{r}
+dietRemote<-read_csv(url("https://www.sheffield.ac.uk/polopoly_fs/1.570199!/file/stcp-Rdataset-Diet.csv"))
+
+head(dietRemote)
+```
+
+### Graphs using ggplot2
+
+If there was one reason to use R instead of SPSS or Excel it is ggplot2. Another Hadley Wickham creation that makes it (relatively) easy to create beautiful and informative graphs.
+
+It takes a little getting used to a first (keep your cheatsheet handy). But once you get the hang of it is very powerful and adaptable.
+
+Plus, there are lots of examples and extensions available online. One useful extension I would recommend is `ggpubr` which adds the little details you need for a publication ready graph (e.g. adding significance comparisons between conditions).
+
+-   <https://blog.modeanalytics.com/r-ggplot-extension-packages>
+-   <https://micahallen.org/2018/03/15/introducing-raincloud-plots/>
+
+#### Data wrangling
+
+First we need to tell it a little bit more about our data types. i.e. which variables/columns are categorical data. We will give them labels too. And remove incomplete cases.
+
+```{r}
+
+# create factors with value labels 
+dietdata$gender <- factor(dietdata$gender,levels=c(0,1),
+  	labels=c("Female","Male")) 
+
+dietdata$Diet <- factor(dietdata$Diet,levels=c(1,2,3),
+  	labels=c("Control","Low Carb","Low Cal")) 
+
+#we also have two participants with missing value `NA` for gender.
+#Let's exclude them from the dataset
+# There are various ways to do this
+# use the function complete.cases to logically select rows
+dietall_v1<-dietdata[complete.cases(dietdata),]
+
+# or let tidyr do it for you
+dietall_v2<-dietdata %>% drop_na()  
+```
+
+```{r}
+#let's take a look at both of those
+head(dietall_v1)
+head(dietall_v2)
+```
+
+```{r}
+# Lets start with a couple of plots exploring our diet data
+# first a box plot comparing ages of males and females 
+ggplot(data = dietall_v2, aes(x = gender, y=Age)) + 
+        geom_boxplot() 
+```
+
+```{r}
+# now how much weight was lost on each diet type
+ggplot(data = dietall_v2, aes(x = Diet, y=weightLOST)) + 
+        geom_boxplot()  
+
+#let's count our groups too
+dietall_v2 %>% group_by(Diet) %>% count()
+```
+
+Now let's separate those out by gender. For the plot, we do this by adding the command `facet_grid` to the ggplot command. For the table, we add gender to the `group_by` list.
+
+```{r}
+# 
+ggplot(data = dietall_v2, aes(x = Diet, y=weightLOST)) + 
+        geom_boxplot()  + facet_grid(~ gender,)
+
+#let's count our groups too
+dietall_v2 %>% group_by(Diet, gender) %>% count()
+```
+
+Hopefully, this gives you a sense of how powerful ggplot is. Admittedly, the commands are not completely intuitive. YOU should get used to using the cheetsheet and for searching for examples online. The help community websites [StackExchange](https://stats.stackexchange.com/questions/tagged/ggplot2) and [Stack Overflow](https://stackoverflow.com/questions/tagged/ggplot2) both have lots of help for R and for tools like ggplot.
+
+Chances are you aren't the first person to encounter a particular problem.
+
+```{r}
+# let's try something a bit more modern
+ggplot(data = dietall_v2, aes(x = Diet, y=weightLOST)) + 
+        geom_violin(aes(fill=Diet))  + 
+#        geom_jitter() +
+        facet_grid(~ gender,) +
+        ggtitle('Effect of diet type by gender') +
+        ylab('Weight lost in kg') + 
+        theme_light()
+
+# notice that you can add and remove elements. Try uncommenting the third line
+```
+
+```{r}
+# I wonder if age affects success?
+ggplot(data = dietall_v2, aes(x = Age, y=weightLOST)) + 
+        geom_smooth()
+```
+
+```{r}
+# is it easier to lose weight if you weigh more at the start?
+ggplot(data = dietall_v2, aes(x = pre.weight, y=weightLOST)) + 
+        geom_smooth()
+```
+
+```{r}
+#can we see that as a classic linear regression instead?
+ggplot(data = dietall_v2, aes(x = pre.weight, y=weightLOST)) + 
+        geom_point() +
+        geom_smooth(method=lm)
+```
+
+### Basic Stats
+
+R was created by statisticians for statisticians. The downside of this is that it is very difficult and unusual computer language. I've been using R for 15 years and I still can't use it very well. The upside is that it is the *BEST* environment for doing statistics and has a vast range of available tools.
+
+But be careful, stats is hard.
+
+Let's start with something we think we understand and try to run a t-test...
+
+```{r}
+t.test(x = dietall_v2$pre.weight, y= dietall_v2$weight6weeks)
+```
+
+That is probably not what we were expecting. We forgot to specify that this was a paired-sample test and that we assume equal variance
+
+```{r}
+t.test(x = dietall_v2$pre.weight, y= dietall_v2$weight6weeks,
+      paired = TRUE, var.equal = TRUE)
+```
+
+We can also do some calculations 'manually'. Let's work out Cohen's D.
+
+```{r}
+m1 = mean(dietall_v2$pre.weight)
+m2 = mean(dietall_v2$weight6weeks)
+diff = dietall_v2$pre.weight - dietall_v2$weight6weeks
+
+d = (m1-m2)/sd(diff)
+d
+```
+
+#### ezANOVA
+
+It rapidly gets a lot more complicated than that. R has a much more generic and flexible approach to linear models and analysis of variance. This can be very confusing for social scientists. Again the solution is to make use of extensions which take care of this for you. Package `ez` is useful for running ANOVA.
+
+```{r}
+install.packages("ez")
+library(ez)
+```
+
+```{r}
+ezANOVA(dietall_v2,
+        dv = weightLOST,
+        wid = Person,
+        between = .(gender, Diet))
+```
+
+```{r}
+
+```
+
+### GGStatPlot
+
+Another handy tool is `ggstatsplot` which combines simple stats and graphs into a single call
+
+<https://indrajeetpatil.github.io/ggstatsplot/>
+
+Here's a quick example to see how easy it is..
+
+```{r}
+library(ggstatsplot)
+```
+
+```{r}
+ggstatsplot::ggbetweenstats(data = dietall_v2,
+                            x = Diet,
+                            y = weightLOST
+                            )
+```
+
+### Learn by doing
+
+Hopefully, this has been enough to get you started with notebooks. The real way to learn is by doing this with a dataset of your own. Good luck!
+
+```{r}
+
+```
