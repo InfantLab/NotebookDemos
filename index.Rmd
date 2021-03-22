@@ -113,7 +113,7 @@ $$
 
 #### Try it for yourself
 
-This is also a markdown cell. Go ahead and change some this text.
+This is also a markdown cell. Go ahead and change some this text. We can add more text here...
 
 Why not add a hyperlink with the [name of your website](http://google.com)
 
@@ -131,7 +131,7 @@ OR put it a bit of code. The single backtick format is good for showing the name
 # In R comment lines starting with '#' are ignored
 #
 # To run/execute this code, click on the cell and press ctrl-enter
-print("Hello world")
+print("Hello Goldsmiths")
 ```
 
 ```{r}
