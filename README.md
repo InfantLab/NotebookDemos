@@ -1,4 +1,6 @@
-# A Jupyter + R ( + mybinder.org) tutorial for social scientists
+# A quick Computational Notebook tutorial for social scientists
+
+## Using R-stats in RMarkdown or Jupyter notebook
 
 This repository contains a Jupyter notebook file which walks you through the basics of using notebooks and RStats for reproducible data analysis. It starts with a general guide to the notebook format and how to install the necessary software. Then it goes through an example using R to load data, filter missing values, create graphs and run statistical tests. 
 
