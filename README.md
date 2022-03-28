@@ -1,4 +1,4 @@
-# A quick Computational Notebook tutorial for social scientists
+# A quick Computational Notebook tutorial for pyschologists and other social scientists
 
 ## Using R-stats in RMarkdown or Jupyter notebook
 
