@@ -19,13 +19,13 @@ Download this folder of code to your local machine amd then either
 This example can to launched and run from Binder. Click one of these black and red buttons. Both [RStudio](https://www.rstudio.com/) and [IRKernel](https://irkernel.github.io/) are installed by default, so you can use either the Jupyter notebook interface or
 the RStudio interface for R projects. 
 
-This tutorial is about Jupyter in combination with R. To launch it press this button >>  [![Binder](http://mybinder.org/badge.svg)](http://beta.mybinder.org/v2/gh/yourbrain/notebookdemos/master)
+This tutorial is about Jupyter in combination with R. To launch it press this button >>  [![Binder](http://mybinder.org/badge.svg)](https://mybinder.org/v2/gh/InfantLab/NotebookDemos/HEAD?labpath=.%2Findex.ipynb)
 
 Once it has started itself up, launch the tutorial by clicking `index.ipynb`
 
 
 *Beware, that if it hasn't been used recently, it can take a very long time to recreate the virtual machine.*
-*Beware, all changes will be lost when you close the binder session.*
+*Beware, all changes will be lost when you close the binder session. If you want to *
 
 
 ## Shiny example
