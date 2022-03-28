@@ -23,9 +23,14 @@ This tutorial is about Jupyter in combination with R. To launch it press this bu
 
 Once it has started itself up, launch the tutorial by clicking `index.ipynb`
 
-
 *Beware, that if it hasn't been used recently, it can take a very long time to recreate the virtual machine.*
 *Beware, all changes will be lost when you close the binder session. If you want to *
+
+## To run using Google Colab
+
+If myBinder doesn't work you can run the same code via the [Google Colabatory](https://colab.research.google.com)
+
+Use the following link: https://colab.research.google.com/github/InfantLab/NotebookDemos/blob/master/index.ipynb
 
 
 ## Shiny example
